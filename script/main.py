@@ -1,23 +1,39 @@
 import argparse
+from analyze import analyze
+from utils import help
 
 def main():
-    parser = argparse.ArgumentParser(
-        prog = "seqly",
-        add_help=False
-    )
-    parser.add_argument(
-        "command",
-        nargs="?",
-        default=None
-    )
-    args=parser.parse_args()
+    parser = argparse.ArgumentParser(prog = "seqly", add_help=False)
+    parser.add_argument("command", nargs="?")
+    parser.add_argument("-s", "--sequence", action="store_true")
+    parser.add_argument("-f", "--file", action="store_true")
+    args, unknown = parser.parse_known_args()
     
-    if args.command is None:
-        print("Command required, type 'seqly help' to see tutorial")
-    elif args.command in ("analyze", "an"):
-        print("coming soon analyze")
-    elif args.command in ("align", "al"):
-        print("coming soon align")
+    if unknown:
+        print("Invalid Input, please just type 'seqly help' to see tutorial")
+        return
+    
+    valid_commands = ["analyze", "an",
+                      "blast", "bl",
+                      "pairwise", "pw",
+                      "transcript", "tc",
+                      "translate", "tl",
+                      "help"]
+    if args.command not in valid_commands:
+        print("Invalid Input, please type 'seqly help' to see tutorial")
+        return
+
+    mode = None
+    if args.sequence:
+        mode = 0
+    elif args.file:
+        mode = 1
+
+    if args.command in ("analyze", "an"):
+        if mode is None:
+            print("Invalid Input, please type 'seqly' to see tutorial")
+            return
+        analyze(mode)
     elif args.command in ("blast", "bl"):
         print("coming soon blast")
     elif args.command in ("pairwise", "pw"):
@@ -26,11 +42,9 @@ def main():
         print("coming soon transcript")
     elif args.command in ("translate", "tl"):
         print("coming soon translate")
-    elif args.command in ("help, h"):
-        print("for helper")
-    else :
-        print("Unknown command, type 'seqly help' to see available commands")
+    else:
+        help()
         return
-    
+
 if __name__ == "__main__":
     main()
