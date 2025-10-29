@@ -4,5 +4,16 @@
        ██   ██        ██ ▄▄ ██   ██           ██     
   ███████   ███████    ██████    ███████      ██     
                           ▀▀                         
+Usage: seqly [-s | -f] [Command] 
 
-usage: seqly [-s | -f] [command]
+Input options :
+-s, --sequence      Direct sequence input
+-f, --file          Input from file
+
+Command options :
+an, analyze         
+bl, blast
+pw, pairwise
+tc, transcript
+tl, translate
+help

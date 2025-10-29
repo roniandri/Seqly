@@ -1,8 +1,9 @@
 from Bio import SeqIO
+from Bio.Data import IUPACData
 
 def fileread():
     file_path = input("Input=> ").strip().strip('"')
-    file_format = input("Format=> ").strip()
+    file_format = input("Format=> ").strip().lower() or "fasta"
 
     sequences = list(SeqIO.parse(file_path, file_format))
     list_sequence = [str(record.seq) for record in sequences]
@@ -15,14 +16,18 @@ def directread():
     return len(list_sequence), list_sequence
 
 def typeread(sequence):
-    seqset =  set(sequence)
-    if seqset.issubset({'A', 'C', 'G', 'T'}):
-        return "DNA"
-    elif seqset.issubset({'A', 'C', 'G', 'U'}):
+    seq_upper = sequence.upper()
+    seq_set = set(seq_upper)
+
+    rna_symbols = set(IUPACData.ambiguous_rna_values.keys())
+    dna_symbols = set(IUPACData.ambiguous_dna_values.keys())
+    protein_symbols = set("ACDEFGHIKLMNPQRSTVWYXBJZOU")
+
+    if seq_set.issubset(rna_symbols):
         return "RNA"
-    elif seqset.issubset({
-        'A', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'K', 'L',
-        'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'Y'}):
+    elif seq_set.issubset(dna_symbols):
+        return "DNA"
+    elif seq_set.issubset(protein_symbols):
         return "Protein"
     else:
         return "Unknown sequence"
