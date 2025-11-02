@@ -21,7 +21,7 @@ def main():
                       "translate", "tl",
                       "help"]
     if args.command not in valid_commands:
-        print("Invalid Input, please type 'seqly help' to see tutorial")
+        print("Invalid input, please type 'seqly help' to see tutorial")
         return
 
     mode = None
@@ -32,22 +32,22 @@ def main():
 
     if args.command in ("analyze", "an"):
         if mode is None:
-            print("Invalid Input, please type 'seqly' to see tutorial")
+            print("Invalid input, please type 'seqly' to see tutorial")
             return
         analyze(mode)
     elif args.command in ("pairwise", "pw"):
         if mode is None:
-            print("Invalid Input, please type 'seqly' to see tutorial")
+            print("Invalid input, please type 'seqly' to see tutorial")
             return
         pairwise(mode)
     elif args.command in ("transcribe", "tc"):
         if mode is None:
-            print("Invalid Input, please type 'seqly' to see tutorial")
+            print("Invalid input, please type 'seqly' to see tutorial")
             return
         transform(mode, 0)
     elif args.command in ("translate", "tl"):
         if mode is None:
-            print("Invalid Input, please type 'seqly' to see tutorial")
+            print("Invalid input, please type 'seqly' to see tutorial")
             return
         transform(mode, 1)
     else:
