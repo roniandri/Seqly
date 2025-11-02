@@ -1,5 +1,5 @@
 import textwrap
-from utils import directread, fileread, typeread
+from .utils import directread, fileread, typeread
 
 def nucleic(seq_type, sequence, i):
     data =[]

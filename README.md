@@ -29,9 +29,8 @@ source env_name/bin/activate
 3. Install Seqly:
 
 ```bash
-pip install /path/to/seqly.whl 
+pip install https://github.com/roniandri/Seqly/releases/download/v1.0.0/seqly-1.0.0-py3-none-any.whl
 ```
-> Replace `/path/to/seqly.whl` with the actual path to your `.whl` file.
 
 ### Option 2: Using Conda
 
@@ -50,10 +49,10 @@ conda activate env_name
 3. Install Seqly via pip (inside the conda environment):
 
 ```bash
-pip install /path/to/seqly.whl
+conda install pip #to ensure pip
+pip install https://github.com/roniandri/Seqly/releases/download/v1.0.0/seqly-1.0.0-py3-none-any.whl
 ```
 
-> Even in a conda environment, `pip` is used to install the wheel.
 
 ---
 

@@ -2,7 +2,7 @@ import textwrap
 import warnings
 from Bio.Seq import Seq
 from Bio import BiopythonWarning
-from utils import directread, fileread, typeread
+from .utils import directread, fileread, typeread
 warnings.simplefilter("ignore", BiopythonWarning)
 
 def transcribe_func(sequence, i):

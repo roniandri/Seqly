@@ -11,5 +11,8 @@ dependencies = [
     "biopython>=1.83"
 ]
 
+[tool.setuptools.package-data]
+script = ["help.txt"]
+
 [project.scripts]
-seqly = "seqly.__main__:main"
+seqly = "script.__main__:main"

@@ -1,8 +1,8 @@
 import argparse
-from analyze import analyze
-from utils import help
-from transform import transform
-from pairwise import pairwise
+from .analyze import analyze
+from .utils import help
+from .transform import transform
+from .pairwise import pairwise
 
 def main():
     parser = argparse.ArgumentParser(prog = "seqly", add_help=False)

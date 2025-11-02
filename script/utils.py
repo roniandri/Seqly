@@ -1,5 +1,6 @@
 from Bio import SeqIO
 from Bio.Data import IUPACData
+import os
 
 def fileread():
     file_path = input("Input=> ").strip().strip('"')
@@ -51,6 +52,9 @@ def typeread(sequence):
         return "Unknown sequence"
 
 def help():
-    with open("help.txt", 'r', encoding='utf-8') as f:
+    here = os.path.dirname(__file__)
+    help_path = os.path.join(here, "help.txt")
+    
+    with open(help_path, "r", encoding="utf-8") as f:
         print("\n")
         print(f.read())

@@ -1,6 +1,6 @@
 from Bio.Align import PairwiseAligner, substitution_matrices
 from itertools import combinations
-from utils import directread, fileread, typeread
+from .utils import directread, fileread, typeread
 
 def pairwise_nucleotide(sequence, model):
     aligner = PairwiseAligner()
