@@ -11,9 +11,33 @@ Input options :
 -f, --file          Input from file
 
 Command options :
-an, analyze         
-bl, blast
-pw, pairwise
-tc, transcript
-tl, translate
-help
+an, analyze         Analyzing sequences
+pw, pairwise        Perform pairwise alignment
+tc, transcribe      Transcribe DNA → RNA
+tl, translate       Translate RNA or DNA → Protein
+help                Show this help message
+
+----------------------------------------------------
+Examples:
+
+- With direct sequence input:
+$ seqly -s an (press Enter)
+Input=> ATGCGTACCTGAAGTCCGATTA
+
+or multiple sekuens:
+Input=> MKWVTFISLLFLFSSAYS MKWVTYISLLFLFSGAYS
+
+- With input from file
+$ seqly -f pw (press Enter)
+Input=> "path/to/your/file.fasta"
+Format=> fasta
+----------------------------------------------------
+1. This program can view all sequences in a file.
+2. Pairwise command requires at least 2 sequences
+3. Support all file format supported by biophyton. But please remember that not all file formats contain sequences.
+4. If you leave the format blank, the default is fasta.
+5. In pairwise command, if you leave the model blank, the default is Needleman-Wunsch model.
+----------------------------------------------------
+
+Author  : Roni Andripan  
+GitHub  : https://github.com/roniandri/Seqly

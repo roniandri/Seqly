@@ -61,8 +61,8 @@ def nucleic(seq_type, sequence, i):
     for line in textwrap.wrap(loop_number, width=43):
         print(f"| {line:<43} |")
     print("="*47)
-    for line in textwrap.wrap(sequence, width=43):
-        print(f"| {line:<43} |")
+    for line in textwrap.wrap(sequence, width=47):
+        print(line)
     print("="*47)
     for row in data:
         print("| {:<15} | {:<25} |".format(*row))
@@ -120,8 +120,8 @@ def protein(sequence, i):
     for line in textwrap.wrap(loop_number, width=43):
         print(f"| {line:<43} |")
     print("="*47)
-    for line in textwrap.wrap(sequence, width=43):
-        print(f"| {line:<43} |")
+    for line in textwrap.wrap(sequence, width=47):
+        print(line)
     print("="*47)
     for row in data:
         print("| {:<15} | {:<25} |".format(*row))

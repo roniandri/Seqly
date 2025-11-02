@@ -1,6 +1,8 @@
 import argparse
 from analyze import analyze
 from utils import help
+from transform import transform
+from pairwise import pairwise
 
 def main():
     parser = argparse.ArgumentParser(prog = "seqly", add_help=False)
@@ -14,9 +16,8 @@ def main():
         return
     
     valid_commands = ["analyze", "an",
-                      "blast", "bl",
                       "pairwise", "pw",
-                      "transcript", "tc",
+                      "transcribe", "tc",
                       "translate", "tl",
                       "help"]
     if args.command not in valid_commands:
@@ -34,17 +35,21 @@ def main():
             print("Invalid Input, please type 'seqly' to see tutorial")
             return
         analyze(mode)
-    elif args.command in ("blast", "bl"):
-        print("coming soon blast")
     elif args.command in ("pairwise", "pw"):
-        print("coming soon pair")
-    elif args.command in ("transcript", "tc"):
-        print("coming soon transcript")
+        if mode is None:
+            print("Invalid Input, please type 'seqly' to see tutorial")
+            return
+        pairwise(mode)
+    elif args.command in ("transcribe", "tc"):
+        if mode is None:
+            print("Invalid Input, please type 'seqly' to see tutorial")
+            return
+        transform(mode, 0)
     elif args.command in ("translate", "tl"):
-        print("coming soon translate")
+        if mode is None:
+            print("Invalid Input, please type 'seqly' to see tutorial")
+            return
+        transform(mode, 1)
     else:
         help()
         return
-
-if __name__ == "__main__":
-    main()

@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seqly"
+version = "1.0.0"
+description = "CLI tool for DNA/RNA/Protein analysis."
+requires-python = ">=3.8"
+dependencies = [
+    "biopython>=1.83"
+]
+
+[project.scripts]
+seqly = "seqly.__main__:main"
