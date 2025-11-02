@@ -29,8 +29,7 @@ source env_name/bin/activate
 3. Install Seqly:
 
 ```bash
-pip install https://github.com/roniandri/Seqly/releases/download/v1.0.1/seqly-1.0.1-py3-none-any.whl
-```
+pip install https://github.com/roniandri/Seqly/releases/download/v1.0.3/seqly-1.0.2-py3-none-any.whl
 
 ### Option 2: Using Conda
 
@@ -50,7 +49,7 @@ conda activate env_name
 
 ```bash
 conda install pip #to ensure pip
-pip install https://github.com/roniandri/Seqly/releases/download/v1.0.1/seqly-1.0.1-py3-none-any.whl
+pip install https://github.com/roniandri/Seqly/releases/download/v1.0.3/seqly-1.0.2-py3-none-any.whl
 ```
 
 

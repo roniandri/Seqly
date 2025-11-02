@@ -14,8 +14,8 @@ def pairwise_nucleotide(sequence, model):
 
     results = []
     for i, j in pairs:
-        seq1 = sequence[i]
-        seq2 = sequence[j]
+        seq1 = str(sequence[i]).upper()
+        seq2 = str(sequence[j]).upper()
 
         alignment = aligner.align(seq1, seq2)[0]
         results.append(((i+1, j+1), alignment.score))
@@ -33,12 +33,18 @@ def pairwise_protein(sequence, model):
     aligner.open_gap_score = -10
     aligner.extend_gap_score = -0.5
     
-    pairs = list(combinations(range(len(sequence)), 2))
+    valid_protein_letters = "ACDEFGHIKLMNPQRSTVWYBXZ"
+    def clean_sequence(seq):
+        seq = str(seq).upper()
+        cleaned = "".join([c for c in seq if c in valid_protein_letters])
+        return cleaned
 
+    pairs = list(combinations(range(len(sequence)), 2))
     results = []
+    
     for i, j in pairs:
-        seq1 = sequence[i]
-        seq2 = sequence[j]
+        seq1 = clean_sequence(sequence[i])
+        seq2 = clean_sequence(sequence[j])
 
         alignment = aligner.align(seq1, seq2)[0]
         results.append(((i+1, j+1), alignment.score))
