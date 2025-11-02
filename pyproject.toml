@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "seqly"
-version = "1.0.0"
+version = "1.0.1"
 description = "CLI tool for DNA/RNA/Protein analysis."
 requires-python = ">=3.8"
 dependencies = [

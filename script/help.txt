@@ -37,6 +37,20 @@ Format=> fasta
 3. Support all file format supported by biophyton. But please remember that not all file formats contain sequences.
 4. If you leave the format blank, the default is fasta.
 5. In pairwise command, if you leave the model blank, the default is Needleman-Wunsch model.
+
+Pairwise Alignment Scoring:
+
+DNA / RNA sequences:
+  match score       : 2
+  mismatch score    : -1
+  gap open score    : -2
+  gap extend score  : -0.5
+
+Protein sequences (using BLOSUM62):
+  substitution matrix: BLOSUM62
+  gap open score     : -10
+  gap extend score   : -0.5
+
 ----------------------------------------------------
 
 Author  : Roni Andripan  
