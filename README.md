@@ -54,16 +54,12 @@ pip install https://github.com/roniandri/Seqly/releases/download/v1.0.0/seqly-1.
 ```
 
 
----
-
 ## Usage
 
 After installation, run the CLI:
 
 ```bash
-seqly
+seqly help
 ```
 
-This will start the interactive CLI where you can select input options and commands.
-
----
+This will start the help message
