@@ -1,23 +1,26 @@
 from Bio import SeqIO
 from Bio.Data import IUPACData
 import os
+import shlex
 
 def fileread():
-    file_path = input("Input=> ").strip().strip('"')
+    file_paths = shlex.split(input("Input file(s)=> ").strip())
     file_format = input("Format=> ").strip().lower() or "fasta"
 
-    if not file_path:
-        print("No file path detected.")
-        return
+    all_sequences = []
+    total_count = 0
+
+    for file_path in file_paths:
+        if "\\" not in file_path and "/" not in file_path:
+            print(f"{file_path} bukan path file yang valid!")
+            continue
+        
+        sequences = list(SeqIO.parse(file_path, file_format))
+        all_sequences.extend([str(record.seq).upper() for record in sequences])
+        total_count += len(sequences)
     
-    if "\\" not in file_path and "/" not in file_path:
-        print("Input is not a file path!")
-        return
+    return total_count, all_sequences
 
-    sequences = list(SeqIO.parse(file_path, file_format))
-
-    list_sequence = [str(record.seq).upper() for record in sequences]
-    return len(sequences), list_sequence
 
 def directread():
     user_input = input("Input=> ").upper().strip()

@@ -53,3 +53,6 @@ def main():
     else:
         help()
         return
+    
+if __name__ == "__main__": #testing
+    main()

@@ -29,7 +29,7 @@ Input=> MKWVTFISLLFLFSSAYS MKWVTYISLLFLFSGAYS
 
 - With input from file
 $ seqly -f pw (press Enter)
-Input=> "path/to/your/file.fasta"
+Input=> "path/to/your/file1.fasta" "path/to/your/file2.fasta"
 Format=> fasta
 ----------------------------------------------------
 1. This program can view all sequences in a file.
@@ -53,5 +53,4 @@ Protein sequences (using BLOSUM62):
 
 ----------------------------------------------------
 
-Author  : Roni Andripan  
 GitHub  : https://github.com/roniandri/Seqly

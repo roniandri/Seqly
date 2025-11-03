@@ -56,17 +56,17 @@ def nucleic(seq_type, sequence, i):
 
     if i != 0:
         print("\n")
-    print("="*47)
+    print("="*70)
     loop_number = f"Sequences number {i+1}"
-    for line in textwrap.wrap(loop_number, width=43):
-        print(f"| {line:<43} |")
-    print("="*47)
-    for line in textwrap.wrap(sequence, width=47):
+    for line in textwrap.wrap(loop_number, width=66):
+        print(f"| {line:<66} |")
+    print("="*70)
+    for line in textwrap.wrap(sequence, width=70):
         print(line)
-    print("="*47)
+    print("="*70)
     for row in data:
-        print("| {:<15} | {:<25} |".format(*row))
-    print("="*47)
+        print("| {:<15} | {:<48} |".format(*row))
+    print("="*70)
 
 def protein(sequence, i):
     seq = sequence.upper()
@@ -115,20 +115,20 @@ def protein(sequence, i):
 
     if i != 0:
         print("\n")
-    print("="*47)
+    print("="*70)
     loop_number = f"Sequences number {i+1}"
-    for line in textwrap.wrap(loop_number, width=43):
-        print(f"| {line:<43} |")
-    print("="*47)
-    for line in textwrap.wrap(sequence, width=47):
+    for line in textwrap.wrap(loop_number, width=66):
+        print(f"| {line:<66} |")
+    print("="*70)
+    for line in textwrap.wrap(sequence, width=70):
         print(line)
-    print("="*47)
+    print("="*70)
     for row in data:
-        print("| {:<15} | {:<25} |".format(*row))
-    print("="*47)
+        print("| {:<15} | {:<48} |".format(*row))
+    print("="*70)
     for row in aa_stats:
-        print("| {:<15} | {:<25} |".format(*row))
-    print("="*47)
+        print("| {:<15} | {:<48} |".format(*row))
+    print("="*70)
 
 def analyze(mode):
     if mode == 0:
