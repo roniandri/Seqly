@@ -52,5 +52,4 @@ Protein sequences (using BLOSUM62):
   gap extend score   : -0.5
 
 ----------------------------------------------------
-
 GitHub  : https://github.com/roniandri/Seqly
